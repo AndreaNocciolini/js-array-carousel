@@ -67,6 +67,11 @@
     left: 89%;
     font-size: 1.5em;
     color: white;
+    display: none;
+}
+
+.able {
+    display: block;
 }
 
 .next {
