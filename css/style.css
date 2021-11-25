@@ -22,6 +22,7 @@
     background-color: red;
 }
 
+/* Images */
 .big-picture {
     width: 80%;
     height: 100%;
@@ -40,3 +41,24 @@
     width: 100%;
     height: 20%;
 }
+
+.small-picture img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+/* End Images */
+
+/* Arrows */
+.previous,
+.next {
+    position: absolute;
+    left: 89%;
+    font-size: 1.5em;
+    color: white;
+}
+
+.next {
+    bottom: 0;
+}
+/* End Arrows */
