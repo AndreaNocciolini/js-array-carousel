@@ -1,22 +1,26 @@
 const prev = document.querySelector(`.slider .previous`);
 const next = document.querySelector(`.slider .next`);
-console.log(prev, next);
-
-// const images = ['img/01.jpg','img/02.jpg','img/03.jpg','img/04.jpg','img/05.jpg'];
-// const containerImage = document.querySelector(`.big-picture`);
-// console.log(images, containerImage);
+// console.log(prev, next);
 
 const imagesDom = document.querySelectorAll(`.big-picture img`);
-console.log(imagesDom);
+// console.log(imagesDom);
 
 imagesDom[0].classList.add('first', 'active');
 imagesDom[imagesDom.length - 1].classList.add('last');
-console.log(imagesDom[0], imagesDom[imagesDom.length - 1])
-console.log(imagesDom[4])
+// console.log(imagesDom[0], imagesDom[imagesDom.length - 1])
+
+const smallPicDom = document.querySelectorAll(`.small-picture`);
+
+smallPicDom[0].classList.add(`first`, `brightness`);
+smallPicDom[4].classList.add(`last`);
+// console.log(smallPicDom[0], smallPicDom[4])
+
+//  Arrow Down (Next)
 next.addEventListener(`click`, function(){
     let imageActive = document.querySelector(`.big-picture .active`);
-    console.log(imageActive);
-    console.log(imageActive.nextElementSibling);
+    let smallPicActive = document.querySelector(`.small-picture.brightness`);
+    // console.log(imageActive, smallPicActive);
+    // console.log(imageActive.nextElementSibling, smallPicActive.nextElementSibling);
 
     let imageActiveClasses = imageActive.classList;
     let arrowHelp = false;
@@ -29,17 +33,26 @@ next.addEventListener(`click`, function(){
     if (!arrowHelp) {
         imageActive.classList.remove(`active`);
         imageActive.nextElementSibling.classList.add(`active`);
+
+        smallPicActive.classList.remove(`brightness`);
+        smallPicActive.nextElementSibling.classList.add(`brightness`);
     }
     else {
         imageActive.classList.remove(`active`);
         imagesDom[0].classList.add(`active`);
+
+        smallPicActive.classList.remove(`brightness`);
+        smallPicDom[0].classList.add(`brightness`);
     }
  })
+//  End Arrow Down (Next)
 
+// Arrow Up (Previous)
  prev.addEventListener(`click`, function(){
     let imageActive = document.querySelector(`.big-picture .active`);
-    console.log(imageActive);
-    console.log(imageActive.previousElementSibling);
+    let smallPicActive = document.querySelector(`.small-picture.brightness`);
+    // console.log(imageActive, smallPicActive);
+    // console.log(imageActive.previousElementSibling, smallPicActive.previousElementSibling);
 
     let imageActiveClasses = imageActive.classList;
     let arrowHelp = false;
@@ -52,9 +65,16 @@ next.addEventListener(`click`, function(){
     if (!arrowHelp) {
         imageActive.classList.remove(`active`);
         imageActive.previousElementSibling.classList.add(`active`);
+
+        smallPicActive.classList.remove(`brightness`);
+        smallPicActive.previousElementSibling.classList.add(`brightness`);
     }
     else {
         imageActive.classList.remove(`active`);
         imagesDom[4].classList.add(`active`);
+
+        smallPicActive.classList.remove(`brightness`);
+        smallPicDom[4].classList.add(`brightness`);
     }
 })
+// Arrow Up (Previous)
