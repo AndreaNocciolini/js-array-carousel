@@ -76,4 +76,9 @@
 .next {
     bottom: 0;
 }
+
+.previous:hover,
+.next:hover {
+    cursor: pointer;
+}
 /* End Arrows */
