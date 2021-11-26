@@ -60,6 +60,7 @@
 
 .small-picture.brightness {
     opacity: 1;
+    border: 2px solid white;
 }
 /* End Images */
 
